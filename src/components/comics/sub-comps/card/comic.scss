@@ -1,0 +1,31 @@
+.comic {
+  height: 320px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px #202020;
+  gap: 5px;
+  img {
+    height: 200px;
+    object-fit: contain;
+  }
+  .card_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      font-size: 16px;
+      text-align: center;
+      text-wrap: balance;
+      height: 40px;
+      overflow-y: hidden;
+    }
+    .btn {
+      width: 200px;
+      align-self: center;
+    }
+  }
+}

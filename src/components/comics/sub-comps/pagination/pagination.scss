@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  opacity: 80%;
+  .btn {
+    font-size: 30px;
+    color: #202020;
+  }
+  .pages {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+}
+
+@media (min-width: 900px) {
+  .pagination {
+    grid-column-start: 2;
+  }
+}
