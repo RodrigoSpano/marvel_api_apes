@@ -21,9 +21,9 @@ export const comicsSlice = createSlice({
     },
     orderByName: (state, action) => {
       if (action.payload === 'A-Z') {
-        state.allComics = state.allComicsCopy.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
+        state.allComics = state.allComics.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
       } else if (action.payload === 'Z-A') {
-        state.allComics = state.allComicsCopy.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()))
+        state.allComics = state.allComics.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()))
       }
     }
   },
