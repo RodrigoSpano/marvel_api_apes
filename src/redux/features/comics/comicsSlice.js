@@ -10,8 +10,8 @@ export const comicsSlice = createSlice({
   name: 'comics',
   initialState,
   reducers: {
-    getComics: (state, action) => {
-      state = action
+    getComicById: (state, action) => {
+      state.comicDetail = state.allComics.find(c => parseInt(c.id) === parseInt(action.payload))
     }
   },
   extraReducers: (builder) => {
@@ -21,6 +21,6 @@ export const comicsSlice = createSlice({
   }
 })
 
-export const { getComics } = comicsSlice.actions
+export const { getComicById } = comicsSlice.actions
 
 export default comicsSlice.reducer

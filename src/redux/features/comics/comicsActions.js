@@ -16,9 +16,9 @@ export const getAllComics = createAsyncThunk(
       resourceURI: c.resourceURI,
       dates: c.dates,
       prices: c.prices,
-      images: c.images.map(o => ({ path: `${o.path}.${o.extension}` })),
-      creators: c.creators,
-      characters: c.characters
+      images: c.images.length ? c.images.map(o => ({ path: `${o.path}.${o.extension}` })) : [{ path: '/assets/confidential.png' }],
+      creators: c.creators.items,
+      characters: c.characters.items
     }))
     return results
   })
