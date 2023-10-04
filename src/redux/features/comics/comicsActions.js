@@ -7,7 +7,7 @@ const API_URI = import.meta.env.VITE_API_URI
 export const getAllComics = createAsyncThunk(
   'comics/getAll',
   async () => {
-    const { data } = await axios(`${API_URI}/comics?offset=3&limit=30&apikey=${API_KEY}`)
+    const { data } = await axios(`${API_URI}/comics?offset=5&limit=30&apikey=${API_KEY}`)
     const results = await data.data.results.map(c => ({
       id: c.id,
       title: c.title,

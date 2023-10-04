@@ -3,6 +3,7 @@ import { getAllComics } from './comicsActions'
 
 const initialState = {
   allComics: [],
+  allComicsCopy: [],
   comicDetail: {}
 }
 
@@ -12,15 +13,21 @@ export const comicsSlice = createSlice({
   reducers: {
     getComicById: (state, action) => {
       state.comicDetail = state.allComics.find(c => parseInt(c.id) === parseInt(action.payload))
+    },
+    searchComic: (state, action) => {
+      const searchComics = state.allComicsCopy.filter(el => el.title.toLowerCase().startsWith(action.payload))
+      if (searchComics.length === 0) state.allComics = state.allComicsCopy;
+      else state.allComics = searchComics
     }
   },
   extraReducers: (builder) => {
     builder.addCase(getAllComics.fulfilled, (state, action) => {
       state.allComics = action.payload
+      state.allComicsCopy = action.payload
     })
   }
 })
 
-export const { getComicById } = comicsSlice.actions
+export const { getComicById, searchComic } = comicsSlice.actions
 
 export default comicsSlice.reducer

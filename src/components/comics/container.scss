@@ -1,4 +1,15 @@
 .comics_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  input {
+    width: 100px;
+  }
+}
+
+.comics_grid {
   padding-block: 30px;
   display: grid;
   grid-template-columns: 1fr;
@@ -7,14 +18,14 @@
 }
 
 @media (min-width: 600px) {
-  .comics_container {
+  .comics_grid {
     grid-template-columns: repeat(2, 1fr);
     
   }
 }
 
 @media (min-width: 900px) {
-  .comics_container {
+  .comics_grid {
     max-width: 1100px;
     grid-template-columns: repeat(3, 1fr);
   }
