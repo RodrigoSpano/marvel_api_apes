@@ -18,6 +18,13 @@ export const comicsSlice = createSlice({
       const searchComics = state.allComicsCopy.filter(el => el.title.toLowerCase().startsWith(action.payload))
       if (searchComics.length === 0) state.allComics = state.allComicsCopy;
       else state.allComics = searchComics
+    },
+    orderByName: (state, action) => {
+      if (action.payload === 'A-Z') {
+        state.allComics = state.allComicsCopy.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
+      } else if (action.payload === 'Z-A') {
+        state.allComics = state.allComicsCopy.sort((a, b) => b.title.toLowerCase().localeCompare(a.title.toLowerCase()))
+      }
     }
   },
   extraReducers: (builder) => {
@@ -28,6 +35,6 @@ export const comicsSlice = createSlice({
   }
 })
 
-export const { getComicById, searchComic } = comicsSlice.actions
+export const { getComicById, searchComic, orderByName } = comicsSlice.actions
 
 export default comicsSlice.reducer

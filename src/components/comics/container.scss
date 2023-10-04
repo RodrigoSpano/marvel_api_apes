@@ -4,8 +4,10 @@
   justify-content: center;
   align-items: center;
   padding-top: 20px;
-  input {
-    width: 100px;
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 }
 
@@ -17,6 +19,11 @@
   gap: 30px;
 }
 
+@media (max-width: 400px) {
+  .filters {
+    flex-direction: column
+  }
+}
 @media (min-width: 600px) {
   .comics_grid {
     grid-template-columns: repeat(2, 1fr);
