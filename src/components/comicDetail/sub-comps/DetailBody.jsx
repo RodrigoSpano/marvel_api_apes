@@ -21,7 +21,7 @@ const DetailBody = () => {
         : null
       }
     {
-      (comicDetail && comicDetail.characters.length || comicDetail.creators.length) ? <CharsAndCreators /> : null
+      (comicDetail && comicDetail.characters || comicDetail.creators) ? <CharsAndCreators /> : null
     }
     </div>
   )

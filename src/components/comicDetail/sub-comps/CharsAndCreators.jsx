@@ -26,7 +26,7 @@ const CharsAndCreators = () => {
           {
             comicDetail && comicDetail.characters.length ? 
               comicDetail.characters.map(char => <li key={char.name}>{char.name}</li>)
-            : 'No creators provided'
+            : 'No characters provided'
           }
         </div>
       </Accordion.Body>
